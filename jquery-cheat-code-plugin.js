@@ -93,24 +93,27 @@ function CheatCodeEventHandler(element){
     }
   };
 
-  if(element.mapping){
-    this.inputMapping(element.mapping);
-  }
-
-  if(element.sequence){
-    this.cheatSequence(element.sequence);
-  }
-
-  if(element.object){
-    if(typeof element.object == 'string'){
-      element.object = $(element.object);
-    }
-  }
-  else if(!element){
+  if(!element){
+    element = {};
     element.object = $(document);
   }
-  else if(typeof element == 'string'){
-    element.object = $(element);
+  else{
+    if(element.mapping){
+      this.inputMapping(element.mapping);
+    }
+
+    if(element.sequence){
+      this.cheatSequence(element.sequence);
+    }
+
+    if(element.object){
+      if(typeof element.object == 'string'){
+        element.object = $(element.object);
+      }
+    }
+    else if(typeof element == 'string'){
+      element.object = $(element);
+    }
   }
 
   element.object.on('keyup',function(event){
