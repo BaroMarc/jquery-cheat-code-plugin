@@ -47,13 +47,4 @@ Gets the current state of the sequence, i.e. the number of keys pressed correctl
 - totalStates()
 The total number of inputs that the cheat consists in.
 
-Sample event:
-
-$(function(){
-  var code = new CheatCodeEventHandler({object:'#input'});
-  code.cheatSequence(['down', 'down', 'left', 'up', 'B']);
-
-  $(document).on('cheatCodeEntered',function(){
-    alert('Awesome cheat code library! Sequence = ' + code.cheatSequence());
-  });
-});
+Sample event: http://jsfiddle.net/tsp5uLcw/
