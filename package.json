@@ -1,6 +1,6 @@
 {
   "name": "jquery-cheat-code-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A jQuery plugin for handling cheat code inputs in your web app",
   "main": "jquery-cheat-code-plugin.js",
   "dependencies": {
