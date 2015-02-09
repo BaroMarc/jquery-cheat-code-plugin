@@ -1,31 +1,27 @@
 # jquery-cheat-code-plugin
-This is a small plugin that processes the custom 'cheatCodeEntered' event. This event consists in a sequence of key
+
+*jquery-cheat-code-plugin* is a small jQuery plugin that defines the custom 'cheatCodeEntered' event. This event consists in a sequence of key
 presses that are fully customizable, on any element of the DOM that the user can set.
 
-The default values are the Konami Code (up, up, down, down, left, right, left, right, B, A, Start), with the key
-mapped on the standard US keyboard and the sequence being listened on the whole document.
+Check out the [jsfiddle demo](http://jsfiddle.net/tsp5uLcw)!
 
-If you want to include it on your project, you have to add one of these lines on the document ready handler:
+## Usage
 
+The plugin defaults to the Konami Code (up, up, down, down, left, right, left, right, B, A, Start), with the keys
+mapped for the standard US keyboard and the sequence being listened on the whole document.
+
+To include it on your project, you have to add one of these lines on the document ready handler:
+
+```js
 var code = new CheatCodeEventHandler();
-
-or
-
 var code = new CheatCodeEventHandler(params);
+```
 
-or
-
-var code = new CheatCodeEventHandler(element,[sequence], [mapping]);
-
-The first one creates a default 'cheatCodeEntered' event, that listens for the Konami Code on the whole document with the standard US keyboard mapping.
-
-The second one has an argument 'params', who is an object literal with this possible elements:
+The first one creates a default 'cheatCodeEntered' event, and the second one has an argument 'params', that consists of an object with this possible elements:
 
 - object : contains either the CSS selector or the actual DOM element of the one that listens for the event.
 - sequence : contains an array of strings that represents the sequence of keys of the cheat code. Only keys that have mappings are allowed.
 - mapping : contains an object literal that represents the mapping of the input values, such as '38 : up' or '40 : down'. The keys of the object are keyboard key codes and the values are strings that represent input values of the cheat code.
-
-Finally, the third call is exactly the same as the second, only using separate arguments instead of an object literal.
 
 The class CheatCodeEventHandler provides with the following functions:
 
@@ -47,4 +43,7 @@ Gets the current state of the sequence, i.e. the number of keys pressed correctl
 - totalStates()
 The total number of inputs that the cheat consists in.
 
-Sample event: http://jsfiddle.net/tsp5uLcw/
+## About
+
+- Author: [Marc Cusso](https://github.com/CussoMarc)
+- License: [MIT License](http://opensource.org/licenses/MIT)
